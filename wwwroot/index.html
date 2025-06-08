@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Avaliação</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .vermelho {
+            background-color: red;
+            color: white;
+        }
+
+        .amarelo {
+            background-color: yellow;
+            color: black;
+        }
+
+        .verde {
+            background-color: green;
+            color: white;
+        }
+
+        .grupo-avaliacao {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .botao-carinha {
+            font-size: 30px;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .botao-carinha:hover {
+            transform: scale(1.2);
+        }
+
+        .selecionado {
+            transform: scale(1.4);
+        }
+
+        .desativado {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .caixa-feedback {
+            display: none;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            resize: vertical;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        #avancar {
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        #avancar:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 id="titulo">Avalie o Atendimento</h2>
+    <div class="grupo-avaliacao" id="avaliacao">
+        <button class="botao-carinha" data-valor="1">1</button>
+        <button class="botao-carinha" data-valor="2">2</button>
+        <button class="botao-carinha" data-valor="3">3</button>
+        <button class="botao-carinha" data-valor="4">4</button>
+        <button class="botao-carinha" data-valor="5">5</button>
+        <button class="botao-carinha" data-valor="6">6</button>
+        <button class="botao-carinha" data-valor="7">7</button>
+        <button class="botao-carinha" data-valor="8">8</button>
+        <button class="botao-carinha" data-valor="9">9</button>
+        <button class="botao-carinha" data-valor="10">10</button>
+    </div>
+
+    <div class="caixa-feedback" id="feedback-atendimento">
+        <textarea rows="3" id="comentario" placeholder="Conte o motivo da sua avaliação"></textarea>
+        <button id="avancar" onclick="salvar(event)">Salvar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
